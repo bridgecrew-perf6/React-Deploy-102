@@ -48,15 +48,6 @@ function Registerform() {
             <NavLink to='/' className='text-decoration-none'><button type='submit'className='btn btn-warning d-block w-100'>Login</button></NavLink>
             </div>
         </form>
-
-        {/* {
-        registerDetails.map((insert)=>{
-            return <div>
-                      <p>{insert.email}</p>
-                  </div>
-          })
-        } */}
-        {/* {console.log(registerDetails)} */}
     </div>
   )
 }

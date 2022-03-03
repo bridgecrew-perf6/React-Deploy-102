@@ -39,7 +39,6 @@ const isNavigate=useNavigate()
     setState({...state,[name]:value})
     // setState({...state,[e.target.name]:e.target.value})
     }
-
   return (
     <div className="d-flex justify-content-center">
         <form className="w-25 m-3 shadow p-3 mb-5 bg-white rounded" onSubmit={Submitted}>
@@ -60,7 +59,6 @@ const isNavigate=useNavigate()
               <button type='submit' className='btn btn-outline-success d-block w-50 '>SUBMIT</button>
             </div>
             {/* {error?<p className='bg-success'>submitted successfully</p>:<p>Enter Correct Details</p>} */}
-          
             {/* <div className='justify-content-center d-flex'>          
             <NavLink to='/register' className="text-decoration-none"> <button type='submit'className='btn btn-danger m-2 d-block w-100'>REGISTER</button></NavLink> 
             </div> */}

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {
-
   HashRouter,
   NavLink,
   Route,
@@ -30,12 +29,11 @@ function App({ loginDetails }) {
         <Routes>
           <Route
             path="/*"
-            element={sessionStorage.length>0 ? <Dashboard path='/dashboard'/>:<Loginform path='/'/>}/>
+            element={sessionStorage.length>0? <Dashboard path='/dashboard'/>:<Loginform path='/'/>}/>
             {/* // element={sessionStorage.length>0 ? <Route path="/dashboard" element={<Dashboard/>}/>:<Route path="/" element={<Loginform/>}/>}/> */}
-
-              {/* <Route path="/register" element={<Registerform/>}/> */}
-              {/* <Route path="/" element={<Loginform/>}/> */}
-              {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
+            {/* <Route path="/register" element={<Registerform/>}/> */}
+            {/* <Route path="/" element={<Loginform/>}/> */}
+            {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
         </Routes>
       {/* </BrowserRouter> */}
       </HashRouter>

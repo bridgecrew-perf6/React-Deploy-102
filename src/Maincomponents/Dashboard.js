@@ -28,7 +28,7 @@ function Dashboard({fetchingTheData}) {
   console.log(data)
   return (
     <>    
-  <div className='bg-danger d-flex justify-content-end'>
+      <div className='bg-danger d-flex justify-content-end'>
             {data.map((current,index)=>{
               return  <div key={index}>
                   <span className='text-white m-3'>Id:{current?.Id}</span> 
@@ -37,7 +37,7 @@ function Dashboard({fetchingTheData}) {
               </div>
               })
             }
-  </div>
+      </div>
           <h2>Welcome to Dashboard Page</h2>
          {/* <AllformData/> */}
          <table className="table table-striped table-dark container table-hover">
@@ -64,7 +64,7 @@ function Dashboard({fetchingTheData}) {
           </tbody>
 
         </table>
-        {console.log(fetchingTheData)}
+        {/* {console.log(fetchingTheData)} */}
     </>
 
   )
