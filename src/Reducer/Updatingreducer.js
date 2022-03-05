@@ -1,27 +1,27 @@
 import {
-  LOGIN_USER_START,
-  LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAIL,
+  EDIT_USER_FAIL,
+  EDIT_USER_START,
+  EDIT_USER_SUCCESS,
 } from "../Actions/Actiontype";
 const initialstate = {
   loading: false,
   users: [],
   error: "",
 };
-function Reducer(state = initialstate, action) {
+function UpdatingReducer(state = initialstate, action) {
   switch (action.type) {
-    case LOGIN_USER_START:
-    // console.log(state)
+    case EDIT_USER_START:
+      // console.log(state)
       return { ...state, loading: true };
       break;
-    case LOGIN_USER_SUCCESS:
+    case EDIT_USER_SUCCESS:
       return {
         ...state,
         loading: false,
         users: action.payload,
         error: "",
-      }
-    case LOGIN_USER_FAIL:
+      };
+    case EDIT_USER_FAIL:
       return { ...state, loading: false, users: [], error: action.payload };
       break;
     default:
@@ -29,4 +29,4 @@ function Reducer(state = initialstate, action) {
       break;
   }
 }
-export default Reducer;
+export default UpdatingReducer;

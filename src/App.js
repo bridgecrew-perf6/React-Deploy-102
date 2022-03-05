@@ -11,7 +11,8 @@ import "./App.css";
 // import AllformData from "./Maincomponents/AllformData";
 import Dashboard from "./Maincomponents/Dashboard";
 import Loginform from "./Maincomponents/Loginform";
-import { useNavigate } from 'react-router'
+import Popupform from "./Maincomponents/Popupform";
+// import { useNavigate } from 'react-router'
 
 // import LoginToRedirectPage from "./Maincomponents/RedirectPage";
 // import Registerform from "./Maincomponents/Registerform";
@@ -29,7 +30,7 @@ function App({ loginDetails }) {
         <Routes>
           <Route
             path="/*"
-            element={sessionStorage.length>0? <Dashboard path='/dashboard'/>:<Loginform path='/'/>}/>
+            element={sessionStorage.length>0?<Dashboard path='/dashboard'/>:<Loginform path='/'/>}/>
             {/* // element={sessionStorage.length>0 ? <Route path="/dashboard" element={<Dashboard/>}/>:<Route path="/" element={<Loginform/>}/>}/> */}
             {/* <Route path="/register" element={<Registerform/>}/> */}
             {/* <Route path="/" element={<Loginform/>}/> */}
@@ -37,6 +38,7 @@ function App({ loginDetails }) {
         </Routes>
       {/* </BrowserRouter> */}
       </HashRouter>
+      {/* <Popupform/> */}
     </div>
   );
 }
