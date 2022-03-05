@@ -1,34 +1,18 @@
 import React, { useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 // import UpdatingReducer from '../Reducer/Updatingreducer';
-function Popupform({Name,Email,Id}) { 
-
-const [update,setUpdate]=useState({
-  updateName:Name,
-  updateEmail:Email
-})
-
-const submitData=(e)=>{
-  e.preventDefault();
-    console.log(Name)
-    // setUpdate({updateName:Name,updateEmail:Email})
-    console.log(update)
+function Popupform({handleChange,details}) { 
+  // console.log(handleChange)
+const submit=(e)=>{
+  e.preventDefault()
+  // console.log({handleChange})
+  console.log(details.Id)
 }
-
-const changingHandler=(e)=>{
-
-  const{name,value}=e.target
-
-  setUpdate({...update,[name]:value})
-  console.log(update)
-  
-}
-
   return (
  <>
-      <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal"onClick={submitData}>
+    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal"onClick={submit}>
       Edit
-      </button>
+    </button>
 <div className="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog" role="document">
     <div className="modal-content">
@@ -38,15 +22,15 @@ const changingHandler=(e)=>{
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div className="modal-body">
-        <form>
+        <div className="modal-body">
+     <form>
           <div>         
            <label className='d-block fw-bold'>Name</label>
-          <input type='text' name='updateName' value={update.updateName} onChange={changingHandler}/>
+          <input type='text'placeholder='Modify Your Name'value={details.Id} onChange={handleChange}/>
           </div>
           <div>         
            <label  className='d-block fw-bold'>Email</label>
-          <input type='email' name='updateEmail' value={update.updateEmail} onChange={changingHandler}/>
+          <input type='email' placeholder='Modify Your Email'onChange={handleChange}/>
           </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -54,10 +38,10 @@ const changingHandler=(e)=>{
       </div>
         </form>
       </div>
-    </div>
-  </div>
-</div>
-</>
+      </div>
+      </div>
+      </div>
+      </>
 
   )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useCallback, useEffect,useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { FetchDetails } from "../Actions/Actioncreator";
@@ -9,8 +9,12 @@ import Popupform from "./Popupform";
 // import AllformData from './AllformData'
 // import Loginform from './Loginform'
 // import { LogoutUser } from '../Actions/Actioncreator'
-function Dashboard({ fetchingTheData }) {
 
+function Dashboard({ fetchingTheData }) {
+const [state,setState]=useState({
+  Name:"",
+  Email:""
+})
   const dispatch = useDispatch();
   const isNavi = useNavigate();
   const logoutbutton = (e) => {
@@ -30,13 +34,13 @@ function Dashboard({ fetchingTheData }) {
     }
   }, []);
   var data = JSON.parse(sessionStorage.getItem("user"));
-// const ClickEvent=(user)=>{
-//   alert('update')
-//   console.log(user.Id)
-//   console.log(user.Name)
-//   console.log(user.Email)
-//   // submitData()
-// }
+
+
+//passing props data
+const  handleChange=useCallback(e=>{
+  const { name, value } = e.target
+  setState({...state,[name]:value})
+},[state])
   return (
     <div>
       <div className="bg-success d-flex justify-content-end sticky-top">
@@ -89,8 +93,8 @@ function Dashboard({ fetchingTheData }) {
                   <td>{formDetails.Password}</td>
                   <td>{formDetails.Active}</td>
                   <td className="text-black">
-                    <Popupform Id={formDetails.Id} Name={formDetails.Name} Email={formDetails.Email}>
-                    </Popupform>
+                    <Popupform  handleChange={handleChange} details={formDetails}/>
+                   
                   </td>
                   <td>
                     {" "}
